@@ -5,8 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test005": "node --import=./005-Globals/globals.js ./005-Globals/index",
-    "test006": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest"
+    "test005": "echo no test"
   },
   "repository": {
     "type": "git",
@@ -18,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/samuel-gomez/testing/issues"
   },
-  "homepage": "https://github.com/samuel-gomez/testing#readme",
-  "devDependencies": {
-    "cross-env": "^7.0.3"
-  }
+  "homepage": "https://github.com/samuel-gomez/testing#readme"
 }

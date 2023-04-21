@@ -34,5 +34,4 @@ assert.deepStrictEqual(utils.getWinner.mock.calls, [
 assert.strictEqual(utils.getWinner.mock.calls.length, 2);
 
 // cleanup
-// utils.getWinner.mockRestore();
 delete require[utilsPath];

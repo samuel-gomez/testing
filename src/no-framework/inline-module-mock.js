@@ -1,7 +1,3 @@
-const assert = require('assert');
-const thumbWar = require('../thumb-war');
-const utils = require('../utils');
-
 const fn = (impl = () => {}) => {
   const mockFn = (...args) => {
     mockFn.mock.calls.push(args);
@@ -13,14 +9,19 @@ const fn = (impl = () => {}) => {
   return mockFn;
 };
 
-const spyOn = (obj, prop) => {
-  const originalValue = obj[prop];
-  obj[prop] = fn();
-  obj[prop].mockRestore = () => (obj[prop] = originalValue);
-};
+const utilsPath = require.resolve('../utils');
 
-spyOn(utils, 'getWinner');
-utils.getWinner.mockImplementation((p1, p2) => p1);
+require.cache[utilsPath] = {
+  id: utilsPath,
+  fileName: utilsPath,
+  loaded: true,
+  exports: {
+    getWinner: fn((p1, p2) => p1),
+  },
+};
+const assert = require('assert');
+const thumbWar = require('../thumb-war');
+const utils = require('../utils');
 
 const winner = thumbWar('Kent C. Dodds', 'Ken Wheeler');
 assert.strictEqual(winner, 'Kent C. Dodds');
@@ -33,4 +34,5 @@ assert.deepStrictEqual(utils.getWinner.mock.calls, [
 assert.strictEqual(utils.getWinner.mock.calls.length, 2);
 
 // cleanup
-utils.getWinner.mockRestore();
+// utils.getWinner.mockRestore();
+delete require[utilsPath];

@@ -1,0 +1,25 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test005": "node --import=./005-Globals/globals.js ./005-Globals/index",
+    "test006": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuel-gomez/testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuel-gomez/testing/issues"
+  },
+  "homepage": "https://github.com/samuel-gomez/testing#readme",
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

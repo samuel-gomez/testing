@@ -5,7 +5,7 @@ if (!('serviceWorker' in navigator)) {
   // you have an old browser :-(
 }
 
-const greeting = 'hello'
+const greeting = 'hello';;
 console.log(`${greeting} world!`)
 
 void [(1, 2, 3)].forEach(x => console.log(x))

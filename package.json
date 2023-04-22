@@ -4,12 +4,14 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "lint": "eslint --ignore-path .gitignore .",
-    "lint:fix": "eslint --ignore-path .gitignore . --fix"
+    "lint:fix": "eslint --ignore-path .gitignore . --fix",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\""
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
-    "eslint": "^8.39.0"
+    "eslint": "^8.39.0",
+    "prettier": "^2.8.7"
   }
 }

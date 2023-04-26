@@ -5,7 +5,7 @@ function add(a: number, b: number): number {
 type Tuser = {
   name: {
     first: string
-    middle: string
+    midle: string
     last: string
   }
 }

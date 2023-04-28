@@ -9,8 +9,7 @@
     "format:fix": "npm run format -- --write",
     "format:check": "npm run format -- --check",
     "types:check": "tsc",
-    "check": "npm run types:check && npm run format:check && npm run lint && npm run build",
-    "prepare": "husky install"
+    "check": "npm run types:check && npm run format:check && npm run lint && npm run build"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
@@ -22,7 +21,6 @@
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^2.8.7",
-    "typescript": "^5.0.4",
-    "husky": "^7.0.0"
+    "typescript": "^5.0.4"
   }
 }

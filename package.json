@@ -1,21 +1,33 @@
 {
-  "name": "testing",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
+  "name": "static-testing-tools",
+  "private": true,
   "scripts": {
-    "test005": "echo no test"
+    "build": "babel src --extensions .js,.ts,.tsx --out-dir dist",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier ./src",
+    "format:fix": "npm run format -- --write",
+    "format:check": "npm run format -- --check",
+    "types:check": "tsc",
+    "check": "npm run types:check && npm run format:check && npm run lint && npm run build",
+    "prepare": "husky install"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/samuel-gomez/testing.git"
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-typescript": "^7.21.4",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.4"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/samuel-gomez/testing/issues"
-  },
-  "homepage": "https://github.com/samuel-gomez/testing#readme"
+  "dependencies": {
+    "@babel/eslint-parser": "^7.21.3"
+  }
 }
